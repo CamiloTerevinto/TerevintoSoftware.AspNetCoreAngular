@@ -2,7 +2,7 @@
 
 This sample contains a fully usable template app for:
 
-* Angular 14
+* Angular 15 with Angular Material
 * ASP.NET Core 7
 * Entity Framework Core 7
 * ASP.NET Core Identity
