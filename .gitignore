@@ -3,3 +3,4 @@
 CT.Examples.AspNetCoreWithAngular.Api/ClientApp/node_modules/
 CT.Examples.AspNetCoreWithAngular.Api/ClientApp/.angular/
 .vs/
+/CT.Examples.AspNetCoreWithAngular.Api/ClientApp/.browserslistrc
