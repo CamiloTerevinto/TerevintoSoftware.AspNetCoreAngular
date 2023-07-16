@@ -20,17 +20,17 @@ interface SignUpForm {
 })
 export class SignUpComponent {
     public loginForm: FormGroup<SignUpForm>;
-    public hasSignUpFailed: boolean;
+    public hasSignUpFailed: boolean = false;
 
     constructor(private readonly authService: AuthService, private readonly router: Router) {
         const builder = new FormBuilder();
         this.loginForm = builder.nonNullable.group<SignUpForm>({
-            firstName: new FormControl<string>('', [Validators.required]),
-            lastName: new FormControl<string>('', [Validators.required]),
-            email: new FormControl<string>('', [Validators.email, Validators.required]),
-            password: new FormControl<string>('', [Validators.required]),
-            repeatPassword: new FormControl<string>('', [Validators.required]),
-            phoneNumber: new FormControl<string>('', [Validators.required])
+            firstName: builder.nonNullable.control<string>('', [Validators.required]),
+            lastName: builder.nonNullable.control<string>('', [Validators.required]),
+            email: builder.nonNullable.control<string>('', [Validators.email, Validators.required]),
+            password: builder.nonNullable.control<string>('', [Validators.required]),
+            repeatPassword: builder.nonNullable.control<string>('', [Validators.required]),
+            phoneNumber: builder.nonNullable.control<string>('', [Validators.required])
         }, { validators: passwordsMatchValidator })
     }
 

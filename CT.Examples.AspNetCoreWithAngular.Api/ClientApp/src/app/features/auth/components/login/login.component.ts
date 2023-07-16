@@ -11,7 +11,7 @@ import { LogInModel } from '../../models/models';
 })
 export class LoginComponent implements OnInit {
   public loginForm: FormGroup;
-  public hasLoginFailed: boolean;
+  public hasLoginFailed: boolean = false;
 
   constructor(private readonly authService: AuthService, private readonly router: Router ) { 
     this.loginForm = new FormGroup({

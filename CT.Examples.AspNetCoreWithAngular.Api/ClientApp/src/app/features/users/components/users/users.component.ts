@@ -21,16 +21,17 @@ export class UsersComponent implements OnInit {
   displayedColumns: string[] = ['firstName', 'lastName', 'emailAddress', 'phoneNumber', 'actions'];
   dataSource: MatTableDataSource<UserModel>;
 
-  users: UserModel[];
+  users: UserModel[] | null = null;
 
   @ViewChild(MatPaginator, { static: false })
-  paginator: MatPaginator;
+  paginator: MatPaginator | null = null;
 
   constructor(private readonly store: Store<UsersState>,
     private readonly dialog: MatDialog,
     private readonly snackbar: MatSnackBar,
     private readonly actions$: Actions) {
     store.dispatch(UserActions.load());
+    this.dataSource = new MatTableDataSource<UserModel>();
   }
 
   ngOnInit(): void {
@@ -56,7 +57,7 @@ export class UsersComponent implements OnInit {
 
   public applyFilter(event: Event) {
     const value = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = value.toLowerCase();
+    this.dataSource!.filter = value.toLowerCase();
   }
 
   public editUser(user: UserModel) {

@@ -10,7 +10,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { SessionFinishedDialog } from '../components/session-finished/session-finished-dialog';
 
 export class AuthenticationFailedUserEvent implements HttpUserEvent<any> {
-    type: HttpEventType.User;
+    type: HttpEventType.User = HttpEventType.User;
 }
 
 @Injectable()

@@ -7,7 +7,7 @@ import { AuthService } from 'src/app/features/auth/services/auth.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  public isUserAdmin: boolean;
+  public isUserAdmin: boolean = false;
 
   constructor(private readonly authService: AuthService) { }
 

@@ -9,7 +9,7 @@ import { LogInModel, SignUpModel } from '../models/models';
 @Injectable({ providedIn: 'root' })
 export class AuthService {
     isLoggedIn = false;
-    private authToken: string;
+    private authToken: string | null = null;
     private isAdmin: boolean | null = null;
 
     constructor(private readonly httpClient: HttpClient) {
@@ -53,7 +53,7 @@ export class AuthService {
             return this.isAdmin === true;
         }
 
-        const jwtData = this.authToken.split('.')[1];
+        const jwtData = this.authToken!.split('.')[1];
         const decodedJwtJsonData = window.atob(jwtData);
         const decodedJwtData = JSON.parse(decodedJwtJsonData);
 
