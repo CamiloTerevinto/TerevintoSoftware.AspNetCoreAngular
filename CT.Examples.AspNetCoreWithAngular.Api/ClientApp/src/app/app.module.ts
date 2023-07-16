@@ -30,25 +30,21 @@ import { HomeComponent } from './features/home/home.component';
 // Auth components
 import { LoginComponent } from './features/auth/components/login/login.component';
 import { SessionFinishedDialog } from './features/auth/components/session-finished/session-finished-dialog';
-import { SignUpComponent } from './features/auth/components/signup/signup.component';
 import { AuthInterceptor } from './features/auth/services/auth.interceptor';
 
 // User components
-import { EditUserDialogComponent } from './features/users/components/edit-user-dialog/edit-user-dialog.component';
-import { UsersComponent } from './features/users/components/users/users.component';
+
 import { UsersEffects } from './features/users/store/users.effects';
 import { usersReducer } from './features/users/store/users.reducer';
 
 import { MatNativeDateModule } from '@angular/material/core';
+import { AppCustomPreloader } from './AppCustomPreloader';
 
 @NgModule({
     declarations: [
         AppComponent,
         LoginComponent,
-        SignUpComponent,
         HomeComponent,
-        UsersComponent,
-        EditUserDialogComponent,
         SessionFinishedDialog
     ],
     imports: [
@@ -84,7 +80,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
         DatePipe,
-        { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { disableClose: true } }
+        { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { disableClose: true } },
+        AppCustomPreloader
     ],
     bootstrap: [AppComponent]
 })
