@@ -2,9 +2,9 @@
 
 public class OperationResult<T>
 {
-    public T? Data { get; }
+    public T Data { get; }
     public OperationResultStatus Status { get; }
-    public string? ErrorMessage { get; set; }
+    public string ErrorMessage { get; set; }
 
     public bool Success => Status == OperationResultStatus.Success;
 

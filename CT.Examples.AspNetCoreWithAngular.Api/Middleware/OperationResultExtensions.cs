@@ -31,7 +31,7 @@ internal static class OperationResultExtensions
         };
     }
 
-    private static BadRequestObjectResult BadRequest(string title, string? detail)
+    private static BadRequestObjectResult BadRequest(string title, string detail)
     {
         return new BadRequestObjectResult(new ProblemDetails
         {

@@ -2,9 +2,9 @@
 
 This sample contains a fully usable template app for:
 
-* Angular 16 with Angular Material
-* ASP.NET Core 7
-* Entity Framework Core 7
+* Angular 17 with Angular Material
+* ASP.NET Core 8
+* Entity Framework Core 8
 * ASP.NET Core Identity
 
 This template contains components to do sign in/up, and a sample page for users administration.
@@ -33,9 +33,9 @@ The following are some screenshots of this template to give a better idea of wha
 
 You require the following installed on your computer:
 
-* .NET 7 SDK
-* NodeJs 16.14 or newer, or NodeJs 18.10 or newer.
-* [recommended] Visual Studio or Visual Studio Code
+* .NET 8 SDK
+* NodeJs 18.13 or newer, or NodeJs 20.9 or newer.
+* [recommended] Visual Studio 2022 17.8 (or newer), or Visual Studio Code
 
 To build the .NET side of things, run:
 
